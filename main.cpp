@@ -5,7 +5,7 @@ int32_t main()
 {
     // load the Data in datacache D$
     ifstream dfile;
-    dfile.open("input/DCache.txt");
+    dfile.open("DCache.txt");
     vector<int> D$(256, 0);
     for (int i = 0; i < 256; i++)
     {
@@ -14,7 +14,7 @@ int32_t main()
 
     // load the instructions in instructioncache I$
     ifstream ifile;
-    ifile.open("input/ICache.txt");
+    ifile.open("ICache.txt");
     vector<int> I$(256, 0);
     for (int i = 0; i < 256; i++)
     {
@@ -24,7 +24,7 @@ int32_t main()
 
     // load the registers in RF
     ifstream rfile;
-    rfile.open("input/RF.txt");
+    rfile.open("RF.txt");
     vector<int> RF(16, 0);
     for (int i = 0; i < 16; i++)
     {
@@ -346,7 +346,8 @@ int32_t main()
     }
 
     ofstream dofile;
-    dofile.open("output/DCache.txt");
+   // Update the DCache file
+    dofile.open("DCache.txt");
     for (int i = 0; i < 256; i++)
     {
         if (D$[i] >= 16)
@@ -356,7 +357,7 @@ int32_t main()
     }
 
     ofstream ofile;
-    ofile.open("output/Output.txt");
+    ofile.open("Output.txt");
     ofile << "Total number of instructions executed:" << instructions_executed << endl;
     ofile << "Number of instructions in each class" << endl;
     ofile << "Arithmetic instructions              :" << Arithmetic_instructions << endl;
