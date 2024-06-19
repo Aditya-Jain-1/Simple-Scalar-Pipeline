@@ -11,7 +11,7 @@ To understand the working of a simple scalar pipelined processor by simulating t
 * Memory: In case of Load and Store instructions, the data is loaded (into LMD) or stored in DCache respectively.
 * Write Back Stage: The destination register is updated with the value of ALUOutput in case of non-memory instructions and LMD in case of a Load instruction.
 * Data Hazards are handled by keeping a track of the destination registers whose values aren't updated/written back till now through the vector datahazard.
-* Control Hazards are handled using the check variable which is set to true whenever there is a Branch or Jump instruction and accordingly the pipeline in stalled.
+* Control Hazards are handled using the can_fetch variable which is set to false whenever there is a Branch or Jump instruction and accordingly the pipeline in stalled.
   
 ### How to run the code
  1. Compile the cpp file using:
